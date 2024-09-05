@@ -1,0 +1,99 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-image: url('images/space1.jpg');
+    background-size: cover;   /* Ensures the background covers the entire element */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating the image */
+    background-attachment: fixed; /* Makes the background fixed when scrolling */
+}
+/* Container for game content */
+#game-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the left */
+}
+
+/* Speech bubble styling */
+.character-dialogue {
+    position: relative;
+    background: #f1f1f1;
+    border-radius: .4em;
+    padding: 1em;
+    margin-left: 20px;
+    margin-right: auto;
+    max-width: 60%;
+    font-size: 1.1em;
+}
+
+/* Triangle for speech bubble */
+.character-dialogue::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-right-color: #f1f1f1;
+    border-left: 0;
+    margin-top: -5px;
+}
+
+/* Character image styling */
+.character-image {
+    max-width: 150px; /* Adjust image size */
+    margin-right: 20px;
+    animation-duration: 1s; /* Control animation duration */
+}
+
+/* Animation classes */
+.fade-in {
+    animation: fadeIn 1s;
+}
+
+.bounce {
+    animation: bounce 2s infinite;
+}
+
+.float {
+    animation: float 3s infinite;
+}
+
+.spin {
+    animation: spin 2s infinite;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.btn {
+    background-color: #D9B500;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.blurred {
+            filter: blur(5px); /* Adjust the blur radius as needed */
+            pointer-events: none; /* Disable interactions with blurred content */
+        }
